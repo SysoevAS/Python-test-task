@@ -41,7 +41,7 @@ for _, row in df.iterrows():
     ET.SubElement(ecert, 'IEC').text = str(row['IE Code'])
     ET.SubElement(ecert, 'EXPNAME').text = str(row['Client'])
     ET.SubElement(ecert, 'BILLID').text = str(row['Bill Ref no'])
-    ET.SubElement(ecert, 'SDATE').text = datetime.strftime(row['SB Date'], "%d.%m.%Y")
+    ET.SubElement(ecert, 'SDATE').text = str(row['SB Date']).split()[0]
     ET.SubElement(ecert, 'SCC').text = str(row['SB Currency'])
     ET.SubElement(ecert, 'SVALUE').text = str(row['SB Amount'])
 
